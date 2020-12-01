@@ -1,0 +1,17 @@
+#you may encounter this often : summing the same formatted list of a dictionnary
+
+
+#just a sum to return a number
+def sum_dict_simple(dico):
+    total = 0
+    for key in dico.keys(): total += dico[key]
+    return total
+
+# a sum to return a list of items summed each other from each list
+def sum_dico_list(dico):
+    total  = [0]*len(dico[list(dico.keys())[0]])
+    for key in dico.keys():
+        total = [total[x] + dico[key][x] for x in range(len(dico[key]))]
+    return total
+    
+    
